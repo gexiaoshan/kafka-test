@@ -1,0 +1,21 @@
+server:
+  port: 7001
+spring:
+  application:
+    name: kafka-test
+  kafka:
+    bootstrap-servers: 192.168.204.107:9092,192.168.204.108:9092,192.168.204.109:9092
+    consumer:
+      # 默认消费者组
+      groupId: myGroup
+  redis:
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 4
+    database: 0
+    sentinel:
+      master: mymaster
+      nodes: 192.168.40.64:26380,192.168.40.64:26381,192.168.40.64:26382
+    password: redis123456
